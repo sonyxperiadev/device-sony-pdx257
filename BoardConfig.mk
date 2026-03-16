@@ -30,7 +30,7 @@ BOARD_BOOTCONFIG += androidboot.hardware=pdx257
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=pdx257
 
 # FB console
-#BOARD_KERNEL_CMDLINE += earlycon=simplefb,0xb8000000,1080,2520
+#BOARD_KERNEL_CMDLINE += earlycon=simplefb,0xb8000000,1080,2340
 
 # Partition information
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
