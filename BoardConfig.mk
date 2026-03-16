@@ -18,7 +18,7 @@ PRODUCT_PLATFORM := elbe
 include device/sony/elbe/PlatformConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := unknown
-ifneq (,$(filter %xqes54,$(TARGET_PRODUCT)))
+ifneq (,$(filter %xqfe54,$(TARGET_PRODUCT)))
 TARGET_BOOTLOADER_BOARD_NAME := XQ-FE54
 else
 TARGET_BOOTLOADER_BOARD_NAME := XQ-FE54
