@@ -29,7 +29,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/mixer_paths_parrot_qrd_sku1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_parrot_qrd_sku1.xml
 
 # Audio calibration
-PRODUCT_COPY_FILES +=
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/vendor/etc/acdbdata/parrot_qrd_sku1/acdb_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/parrot_qrd_sku1/acdb_cal.acdb \
+    $(DEVICE_PATH)/vendor/etc/acdbdata/parrot_qrd_sku1/workspaceFileXml.qwsp:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/parrot_qrd_sku1/workspaceFileXml.qwsp
 
 # NFC Configuration
 PRODUCT_COPY_FILES += \
