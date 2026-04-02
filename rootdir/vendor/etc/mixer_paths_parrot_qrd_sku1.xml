@@ -32,37 +32,37 @@
 <!-- Changes from Qualcomm Innovation Center are provided under the following  -->
 <!-- license:                                                                  -->
 <!--                                                                           -->
-<!-- Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.  -->
-<!--                                                                           -->
-<!-- Redistribution and use in source and binary forms, with or without        -->
-<!-- modification, are permitted (subject to the limitations in the            -->
-<!-- disclaimer below) provided that the following conditions are met:         -->
-<!--                                                                           -->
-<!--    * Redistributions of source code must retain the above copyright       -->
-<!--      notice, this list of conditions and the following disclaimer.        -->
-<!--                                                                           -->
-<!--    * Redistributions in binary form must reproduce the above              -->
-<!--      copyright notice, this list of conditions and the following          -->
-<!--      disclaimer in the documentation and/or other materials provided      -->
-<!--      with the distribution.                                               -->
-<!--                                                                           -->
-<!--    * Neither the name of Qualcomm Innovation Center, Inc. nor the names   -->
-<!--      of its contributors may be used to endorse or promote products       -->
-<!--      derived from this software without specific prior written permission.-->
-<!--                                                                           -->
-<!-- NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE           -->
-<!-- GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT       -->
-<!-- HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED               -->
-<!-- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF      -->
-<!-- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.      -->
-<!-- IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR      -->
-<!-- ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL    -->
-<!-- DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE         -->
-<!-- GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS             -->
-<!-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER      -->
-<!-- IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR           -->
-<!-- OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN       -->
-<!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                             -->
+<!-- Copyright (c) 2022, 2024 Qualcomm Innovation Center, Inc. All rights reserved. -->
+<!--                                                                                -->
+<!-- Redistribution and use in source and binary forms, with or without             -->
+<!-- modification, are permitted (subject to the limitations in the                 -->
+<!-- disclaimer below) provided that the following conditions are met:              -->
+<!--                                                                                -->
+<!--    * Redistributions of source code must retain the above copyright            -->
+<!--      notice, this list of conditions and the following disclaimer.             -->
+<!--                                                                                -->
+<!--    * Redistributions in binary form must reproduce the above                   -->
+<!--      copyright notice, this list of conditions and the following               -->
+<!--      disclaimer in the documentation and/or other materials provided           -->
+<!--      with the distribution.                                                    -->
+<!--                                                                                -->
+<!--    * Neither the name of Qualcomm Innovation Center, Inc. nor the names        -->
+<!--      of its contributors may be used to endorse or promote products            -->
+<!--      derived from this software without specific prior written permission.     -->
+<!--                                                                                -->
+<!-- NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE                -->
+<!-- GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT            -->
+<!-- HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED                    -->
+<!-- WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF           -->
+<!-- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.           -->
+<!-- IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR           -->
+<!-- ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL         -->
+<!-- DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE              -->
+<!-- GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS                  -->
+<!-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER           -->
+<!-- IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR                -->
+<!-- OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN            -->
+<!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                                  -->
 <mixer>
     <!-- These are the initial mixer settings -->
 
@@ -188,8 +188,8 @@
     <!-- Volume controls -->
     <ctl name="WSA_RX0 Digital Volume" value="84" />
     <ctl name="WSA_RX1 Digital Volume" value="84" />
-    <ctl name="RX_RX0 Digital Volume" value="80" />
-    <ctl name="RX_RX1 Digital Volume" value="80" />
+    <ctl name="RX_RX0 Digital Volume" value="84" />
+    <ctl name="RX_RX1 Digital Volume" value="84" />
     <ctl name="RX_RX2 Digital Volume" value="84" />
     <ctl name="HPHL Volume" value="20" />
     <ctl name="HPHR Volume" value="20" />
@@ -214,7 +214,7 @@
 
     <!-- Headphone class-H mode  -->
     <ctl name="RX_HPH_PWR_MODE" value="ULP" />
-    <ctl name="RX HPH Mode" value="CLS_AB" />
+    <ctl name="RX HPH Mode" value="CLS_H_ULP" />
 
     <!-- IIR/voice anc -->
     <ctl name="IIR0 Band1" value="00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" />
@@ -367,13 +367,13 @@
     </path>
 
     <path name="speaker-mono">
-      <ctl name="aw_dev_0_switch" value="Enable" />
-      <ctl name="aw_dev_1_switch" value="Disable" />
+        <ctl name="aw_dev_0_switch" value="Enable" />
+        <ctl name="aw_dev_1_switch" value="Disable" />
     </path>
 
     <path name="speaker-mono-2">
-      <ctl name="aw_dev_1_switch" value="Enable" />
-      <ctl name="aw_dev_0_switch" value="Disable" />
+        <ctl name="aw_dev_0_switch" value="Enable" />
+        <ctl name="aw_dev_1_switch" value="Disable" />
     </path>
 
     <path name="speaker-mono-vbat">
@@ -425,11 +425,6 @@
     </path>
 
     <path name="sidetone-iir">
-        <ctl name="IIR0 Band1" value="4A A6 78 02 95 4C F1 04 4A A6 78 02 D7 66 1D 36 52 32 C5 03" />
-        <ctl name="IIR0 Band2" value="4A A6 78 02 95 4C F1 04 4A A6 78 02 D7 66 1D 36 52 32 C5 03" />
-        <ctl name="IIR0 Band3" value="50 63 A1 0F 5F 39 BD 20 50 63 A1 0F F9 5D BF 20 3A EB 44 0F" />
-        <ctl name="IIR0 Band4" value="50 63 A1 0F 5F 39 BD 20 50 63 A1 0F F9 5D BF 20 3A EB 44 0F" />
-        <ctl name="IIR0 Band5" value="50 63 A1 0F 5F 39 BD 20 50 63 A1 0F F9 5D BF 20 3A EB 44 0F" />
         <ctl name="IIR0 Enable Band1" value="1" />
         <ctl name="IIR0 Enable Band2" value="1" />
         <ctl name="IIR0 Enable Band3" value="1" />
@@ -439,7 +434,7 @@
 
     <path name="sidetone-headphones">
         <path name="sidetone-iir" />
-        <ctl name="IIR0 INP0 Volume" value="20" />
+        <ctl name="IIR0 INP0 Volume" value="40" />
         <ctl name="IIR0 INP0 MUX" value="DEC0" />
         <ctl name="RX INT0 MIX2 INP" value="SRC0" />
         <ctl name="RX INT1 MIX2 INP" value="SRC0" />
@@ -447,7 +442,7 @@
 
     <path name="sidetone-handset">
         <path name="sidetone-iir" />
-        <ctl name="IIR0 INP0 Volume" value="0" />
+        <ctl name="IIR0 INP0 Volume" value="40" />
         <ctl name="IIR0 INP0 MUX" value="DEC2" />
         <ctl name="RX INT2 MIX2 INP" value="SRC0" />
         <ctl name="WSA_RX0 INT0 SIDETONE MIX" value="SRC0" />
@@ -458,11 +453,11 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="amic1" />
+        <path name="amic5" />
     </path>
 
     <path name="speaker-mic-liquid">
-        <path name="amic3" />
+        <path name="amic5" />
     </path>
 
     <path name="speaker-mic-sbc">
@@ -522,13 +517,13 @@
     </path>
 
     <path name="handset">
-        <ctl name="aw_dev_0_prof" value="Receiver" />
+        <ctl name="aw_dev_0_prof" value="receiver" />
         <ctl name="aw_dev_0_switch" value="Enable" />
         <ctl name="aw_dev_1_switch" value="Disable" />
     </path>
 
     <path name="handset-mic">
-        <path name="amic1" />
+        <path name="amic3" />
     </path>
 
     <path name="ultrasound-handset">
@@ -582,8 +577,6 @@
 
     <path name="headphones-hifi-filter">
         <ctl name="RX_FIR Filter" value="ON" />
-        <ctl name="RX_HPH_PWR_MODE" value="LOHIFI" />
-        <ctl name="RX HPH Mode" value="CLS_AB_HIFI" />
         <path name="headphones" />
     </path>
 
@@ -837,102 +830,42 @@
     <!-- Dual MIC devices -->
     <path name="handset-dmic-endfire">
         <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="TX_AIF1_CAP Mixer DEC5" value="1" />
         <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
-        <ctl name="TX SMIC MUX2" value="SWR_MIC4" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC0" />
-        <ctl name="DEC0 MODE" value="ADC_LOW_PWR" />
-        <ctl name="DEC2 MODE" value="ADC_LOW_PWR" />
-        <ctl name="ADC2 MUX"  value="INP3" />
+        <ctl name="TX DEC5 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX2" value="SWR_MIC5" />
+        <ctl name="TX SMIC MUX5" value="SWR_MIC4" />
+        <ctl name="TX0 MODE" value="ADC_LP" />
+        <ctl name="TX2 MODE" value="ADC_LP" />
+        <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC2_BCS Disable" value="1" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
+        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
+        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
         <ctl name="ADC2_MIXER Switch" value="1" />
         <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="AMIC3_MIXER Switch" value="1" />
+        <ctl name="AMIC1_MIXER Switch" value="1" />
     </path>
 
     <path name="speaker-dmic-endfire">
         <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="TX_AIF1_CAP Mixer DEC5" value="1" />
         <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
-        <ctl name="TX SMIC MUX2" value="SWR_MIC0" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="DEC0 MODE" value="ADC_LOW_PWR" />
-        <ctl name="DEC2 MODE" value="ADC_LOW_PWR" />
-        <ctl name="ADC2 MUX"  value="INP3" />
+        <ctl name="TX DEC5 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX5" value="SWR_MIC5" />
+        <ctl name="TX SMIC MUX2" value="SWR_MIC4" />
+        <ctl name="TX0 MODE" value="ADC_LP" />
+        <ctl name="TX2 MODE" value="ADC_LP" />
+        <ctl name="ADC2 MUX" value="INP3" />
         <ctl name="ADC2_BCS Disable" value="1" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
+        <ctl name="HDR12 MUX" value="NO_HDR12" />
+        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH2" />
+        <ctl name="ADC1 ChMap" value="SWRM_TX2_CH1" />
         <ctl name="ADC2_MIXER Switch" value="1" />
         <ctl name="ADC1_MIXER Switch" value="1" />
-    </path>
-
-    <path name="sony-handset-mic-2nd-mono">
-        <path name="amic3" /> 
-    </path>
-
-    <path name="sony-handset-mic-unprocess-mono">
-        <path name="handset-mic" />
-    </path>
-
-    <path name="sony-handset-mic-unprocess-stereo">
-        <path name="speaker-dmic-endfire" />
-    </path>
-
-    <path name="sony-handset-mic-audiorec-mono">
-        <path name="handset-mic" />
-    </path>
-
-    <path name="sony-handset-mic-audiorec-stereo">
-        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
-        <ctl name="TX SMIC MUX2" value="SWR_MIC0" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="DEC0 MODE" value="ADC_LOW_PWR" />
-        <ctl name="DEC2 MODE" value="ADC_LOW_PWR" />
-        <ctl name="ADC2 MUX"  value="INP3" />
-        <ctl name="ADC2_BCS Disable" value="1" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
-        <ctl name="ADC2_MIXER Switch" value="1" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-    </path>
-
-    <path name="sony-handset-mic-camcorder-mono">
-        <path name="handset-mic" />
-    </path>
-
-    <path name="sony-handset-mic-camcorder-stereo">
-        <ctl name="TX_AIF1_CAP Mixer DEC2" value="1" />
-        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
-        <ctl name="TX DEC2 MUX" value="SWR_MIC" />
-        <ctl name="TX DEC0 MUX" value="SWR_MIC"/>
-        <ctl name="TX SMIC MUX2" value="SWR_MIC0" />
-        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
-        <ctl name="DEC0 MODE" value="ADC_LOW_PWR" />
-        <ctl name="DEC2 MODE" value="ADC_LOW_PWR" />
-        <ctl name="ADC2 MUX"  value="INP3" />
-        <ctl name="ADC2_BCS Disable" value="1" />
-        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
-        <ctl name="ADC1 ChMap" value="SWRM_TX1_CH1" />
-        <ctl name="ADC2_MIXER Switch" value="1" />
-        <ctl name="ADC1_MIXER Switch" value="1" />
-    </path>
-
-    <path name="sony-handset-mic-voicerec-mono">
-        <path name="handset-mic" />
-    </path>
-
-    <path name="sony-handset-mic-voicerec-stereo">
-        <path name="handset-dmic-endfire" />
-    </path>
-
-    <path name="headphones-top-mic">
-        <path name="amic3" />
+        <ctl name="AMIC3_MIXER Switch" value="1" />
+        <ctl name="AMIC1_MIXER Switch" value="1" />
     </path>
 
     <path name="dmic-endfire">
@@ -1178,4 +1111,78 @@
         <path name="headset-mic" />
     </path>
 
+    <path name="echo-ref-record">
+    </path>
+
+    <path name="bt-a2dp">
+    </path>
+
+    <path name="bt-a2dp-mic">
+    </path>
+
+    <path name="bt-ble">
+    </path>
+
+    <path name="bt-ble-mic">
+	</path>
+
+    <path name="main-mic-to-headphones-loopback">
+        <path name="amic1" />
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="IIR0 INP0 MUX" value="DEC2" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="IIR0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="IIR0" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+        <ctl name="ADC2 Volume" value="20" />
+        <ctl name="RX_RX0 Digital Volume" value="98" />
+        <ctl name="RX_RX1 Digital Volume" value="98" />
+        <ctl name="TX_DEC2 Volume" value="94" />
+    </path>
+
+    <path name="sub-mic-to-headphones-loopback">
+        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX0" value="SWR_MIC4" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+        <ctl name="ADC2 ChMap" value="SWRM_TX2_CH1" />
+        <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
+
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="IIR0 INP0 MUX" value="DEC0" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="IIR0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="IIR0" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+        <ctl name="ADC2 Volume" value="20" />
+        <ctl name="RX_RX0 Digital Volume" value="98" />
+        <ctl name="RX_RX1 Digital Volume" value="98" />
+        <ctl name="TX_DEC0 Volume" value="94" />
+    </path>
+
+    <path name="headset-mic-to-headphones-loopback">
+        <path name="amic2" />
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="IIR0 INP0 MUX" value="DEC0" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="IIR0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="IIR0" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+        <ctl name="ADC2 Volume" value="20" />
+        <ctl name="RX_RX0 Digital Volume" value="98" />
+        <ctl name="RX_RX1 Digital Volume" value="98" />
+        <ctl name="TX_DEC0 Volume" value="94" />
+    </path>
 </mixer>
