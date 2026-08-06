@@ -62,7 +62,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/sensors/config/parrot_vertigo_lsm6dst_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/parrot_vertigo_lsm6dst_0.json \
     $(DEVICE_PATH)/vendor/etc/sensors/config/parrot_vertigo_lsm6dst_1.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/parrot_vertigo_lsm6dst_1.json
 
-Device Runtime Resource Overlays
+# Device Runtime Resource Overlays
 PRODUCT_PACKAGES += \
     FrameworkOverlayPDX257 \
     SystemUIOverlayPDX257
