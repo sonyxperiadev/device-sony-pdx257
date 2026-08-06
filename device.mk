@@ -62,7 +62,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/sensors/config/parrot_vertigo_lsm6dst_0.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/parrot_vertigo_lsm6dst_0.json \
     $(DEVICE_PATH)/vendor/etc/sensors/config/parrot_vertigo_lsm6dst_1.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/parrot_vertigo_lsm6dst_1.json
 
-Device Runtime Resource Overlays
+# Device Runtime Resource Overlays
 PRODUCT_PACKAGES += \
     FrameworkOverlayPDX257 \
     SystemUIOverlayPDX257
@@ -89,7 +89,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=420 \
-    ro.usb.pid_suffix=20d
+    ro.vendor.usb.pid_suffix=20e
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/elbe/platform.mk)
